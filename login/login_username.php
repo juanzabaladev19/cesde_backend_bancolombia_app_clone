@@ -7,7 +7,7 @@
 	$sentencia = $bd->prepare("SELECT * FROM usernames  WHERE username = ? AND pin = ?;");							
 	$sentencia->execute([$usuario,$contrasena]);
 	$datos = $sentencia->fetch(PDO::FETCH_OBJ);
-	//print_r($datos);
+	print_r($datos);
 	
 	if ($datos === FALSE) {
 

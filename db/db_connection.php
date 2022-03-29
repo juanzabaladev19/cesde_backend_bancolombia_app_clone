@@ -15,7 +15,3 @@ class DBConnection {
         }
     }
 }
-
-$dbConnection = new DBConnection();
-$connection = $dbConnection->connect();
-echo var_dump($connection);
