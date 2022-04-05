@@ -11,10 +11,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$data = $connection->query($sql)->fetchall(PDO::FETCH_ASSOC);
 		if (count($data) < 1) {
 			header('Content-Type: application/json');
-			echo json_encode(array("error"=>'Usuario no existe'));
+			echo json_encode(array("img" => "","error"=>'Usuario no existe'));
 		} else {
 			header('Content-Type: application/json');
-			echo json_encode($data[0]);
+			
+			echo json_encode(array("img" => $data[0]['img'],"error"=>''));
 		}
 	} catch (Exception $error) {
 		echo $error;
