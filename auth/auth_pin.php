@@ -12,13 +12,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$data = $connection->query($sql)->fetchall(PDO::FETCH_ASSOC);
 		if (count($data) < 1) {
 			header('Content-Type: application/json');
-			echo json_encode(array("error"=>'Usuario no existe'));
+			echo json_encode(array("fullname" => "", "error" => 'Usuario no existe'));
 		} else {
             $userIdentification = $data[0]['user_identification'];
             $sql = "SELECT fullname FROM  bancolombia_transactional.users  WHERE identification = '$userIdentification'";
 		    $data = $connection->query($sql)->fetchall(PDO::FETCH_ASSOC);
 			header('Content-Type: application/json');
-			echo json_encode($data[0]);
+			echo json_encode(array("fullname" => $data[0]['fullname'], "error" => ''));
 		}
 	} catch (Exception $error) {
 		echo $error;
