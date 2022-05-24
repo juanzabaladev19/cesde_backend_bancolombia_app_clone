@@ -1,8 +1,8 @@
 <?php
 
 class DBSecrets {
-    const host = "127.0.0.1";
+    const host = "cesde-bancolombiaapp.c4emsecpizny.us-east-1.rds.amazonaws.com";
     const dbName = "bancolombia_transactional";
-    const user = 'root';
-    const password = '';
+    const user = 'admin';
+    const password = 'Cesde2022*';
 }
